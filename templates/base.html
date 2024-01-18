@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Car-Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="container">
+    <nav
+      style="margin-bottom: 65px"
+      class="mt-2 navbar navbar-expand-lg bg-info text-warning navbar-dark container"
+    >
+      <!-- Container wrapper -->
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand fw-bolder fs-3 text-black" href="#"
+          >Willow & Stone</a
+        >
+
+        <!-- Toggle button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- Link -->
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+              <!-- Dropdown menu -->
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="#">Action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- Icons -->
+          <!--        home, profile, logout menu  -->
+          <ul class="text-black fw-bold navbar-nav d-flex flex-row me-1">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'home' %}"
+                >Home</a
+              >
+            </li>
+
+            {% if request.user.is_authenticated %}
+
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'wishlist' %}"
+                >Wishlist</a
+              >
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'orders' %}"
+                >Orders</a
+              >
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'logout' %}"
+                >Logout</a
+              >
+            </li>
+            {%else%}
+
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'signup'  %}"
+                >Signup</a
+              >
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link fs-5 text-black" href="{%url 'login'  %}"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+          </ul>
+
+          <!-- Search -->
+        </div>
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+
+    {% block body_block %} {% endblock %}
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

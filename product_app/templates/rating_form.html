@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block body_block %}
+<br />
+{% if rated == True %}
+
+<form style="width: 50%; margin: auto" method="post">
+  <h1>Rating page</h1>
+  <p class="text-primary">Your Rating Is: {{form.rating}}</p>
+</form>
+{% else %}
+<form style="width: 50%; margin: auto" method="post">
+  <h1>Rating page</h1>
+  {% csrf_token %} {{form | crispy}}
+
+  <button class="btn btn-warning mb-5">Submit</button>
+  <br />
+</form>
+
+{% endif %} {% endblock %}

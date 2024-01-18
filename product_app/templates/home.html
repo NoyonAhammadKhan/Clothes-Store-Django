@@ -1,0 +1,213 @@
+{% extends 'base.html' %} {% block body_block %} 
+
+<div class="product-area">
+    <!-- filter     -->
+    <div>
+        <main class="page catalog-page">
+            <section class="clean-block clean-catalog dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h4 class="mt-4 mb-5 text-info text-center"><strong>Find The Best Fits For You</strong></h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="d-none d-md-block">
+                                    <div class="filters">
+                                        <div class="filter-item">
+                                            <h3>SIZE</h3>
+                                           
+                                            {%  for size in sizes %}
+
+                                            <div class="form-check">
+                                              <input class="form-check-input" value={{size}} name="size" type="radio"  id="flexRadioDefault1">
+                                              <label class="form-check-label" for="flexRadioDefault1">
+                                                {{size}}
+                                              </label>
+                                            </div>
+                                          
+                                            {% endfor %}
+                                
+                                        </div>
+                                        <div class="filter-item">
+                                            <h3>COLOR</h3>
+                                            {%  for color in colors %}
+
+                                            <div class="form-check">
+                                              <input class="form-check-input" value={{color}} name="color" type="radio"  id="flexRadioDefault1">
+                                              <label class="form-check-label" for="flexRadioDefault1">
+                                                {{color}}
+                                              </label>
+                                            </div>
+                                          
+                                            {% endfor %}
+                                        </div>
+                                        <div class="filter-item">
+                                            <h3>POPULARITY</h3>
+                                            <input class="form-check-input" name="popularity" value="asc" type="radio"  id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                              Ascending
+                                            </label>
+                                            <br>
+                                            <input class="form-check-input" type="radio" value="desc" name="popularity" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                              Descending
+                                            </label>
+                                        </div>
+                                        <div class="filter-item">
+                                          <h3>PRICING</h3>
+                                          <input class="form-check-input" type="radio" value='asc' name="price" id="flexRadioDefault1">
+                                          <label class="form-check-label" for="flexRadioDefault1">
+                                            Ascending
+                                          </label>
+                                          <br>
+                                          <input class="form-check-input" type="radio" value='desc' name="price" id="flexRadioDefault1">
+                                          <label class="form-check-label" for="flexRadioDefault1">
+                                            Descending
+                                          </label>
+                                        </div>
+                                        <div class='mt-5'>
+                                          <button type="button" id="btn" class="btn btn-primary">Apply Filter</button>
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                            </div>
+                            <div class="col-md-9">
+                                <div class="text-center container py-5">
+                                 
+                                
+                                    <div class="row">
+                                      {% for cloth in clothes %} 
+                                      <div class="col-lg-4 col-md-12 mb-4">
+                                        <div class="card">
+                                          <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                            data-mdb-ripple-color="light">
+                                            <img class="w-100" src={{cloth.image.url}} />
+                                            <a href="#!">
+                                              <div class="mask">
+                                              </div>
+                                              <div class="hover-overlay">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="card-body">
+                                            <p href="" class="text-left">
+                                              <h5 class="mb-3 text-info">{{cloth.title}}</h5>
+                                            </p>
+                                            <p href="" class="" style="text-decoration:none;">
+                                              <p class="text-bold">Category:  {{cloth.category}}</p>
+                                            </p>
+                                          
+
+                                            {% if cloth.pro_rating == 0.0 %}
+                                            <p class="text-bold ">Average Rating: <span class='text-danger'> No rating yet.</span>  </p>
+                                          {% else %}
+                                          <p class="text-bold">Average Rating:  {{cloth.pro_rating | floatformat:1}}</p>
+                                            {% endif %}
+
+                                            <h6 class="mb-3">{{cloth.price | floatformat:2}}</h6>
+                                            <div>
+                                              <a class='w-100' href={% url 'details' id=cloth.id %}>
+                                                <button type="button" class="btn btn-primary">Details</button>
+                                              </a>
+                                             
+                                           
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      {% endfor %}
+                                     
+                                    </div>
+                                
+                                   
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- product -->
+    <section >
+      
+    </section>
+</div>
+<script>
+
+  const btn = document.querySelector('#btn');        
+  const sizeButtons = document.querySelectorAll('input[name="size"]');
+  const colorButtons = document.querySelectorAll('input[name="color"]');
+  const priceButtons = document.querySelectorAll('input[name="price"]');
+  const popularityButtons = document.querySelectorAll('input[name="popularity"]');
+  
+
+  btn.addEventListener("click", () => {
+      let selectedSize;
+      let selectedColor;
+      let selectedCategory;
+      let selectedPrice;
+      let selectedPopularity;
+
+      for (const sizeBtn of sizeButtons) {
+          if (sizeBtn.checked) {
+              selectedSize = sizeBtn.value;
+              break;
+          }
+      } 
+
+      for (const colorBtn of colorButtons) {
+        if (colorBtn.checked) {
+            selectedColor = colorBtn.value;
+            break;
+        }
+      } 
+
+     
+
+      for (const priceBtn of priceButtons) {
+        if (priceBtn.checked) {
+            selectedPrice = priceBtn.value;
+            break;
+        }
+    } 
+
+    for (const popularityBtn of popularityButtons) {
+      if (popularityBtn.checked) {
+          selectedPopularity = popularityBtn.value;
+          break;
+      }
+    } 
+
+    let filteredUrl=`http://127.0.0.1:8000/?`;
+
+    if(selectedSize)
+    {
+      filteredUrl=filteredUrl+`size=${selectedSize}&`
+    }
+
+    if(selectedColor)
+    {
+      filteredUrl=filteredUrl+`color=${selectedColor}&`
+    }
+    if(selectedPrice)
+    {
+      filteredUrl=filteredUrl+`price=${selectedPrice}&`
+    }
+   
+    if(selectedPopularity)
+    {
+      filteredUrl=filteredUrl+`popularity=${selectedPopularity}&`
+    }
+    console.log("filtered_url",filteredUrl)
+
+    window.location.href = filteredUrl;
+
+     
+  });
+</script>
+
+{% endblock %}

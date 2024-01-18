@@ -1,0 +1,70 @@
+{% extends 'base.html' %} {% block body_block %} 
+
+<div class="product-area">
+    <!-- filter     -->
+    <div>
+        <main class="page catalog-page">
+            <h1 class="mt-4 mb-5 text-info text-center"><strong>Your Wishlist</strong></h1>
+            <section class="clean-block clean-catalog dark">
+                <div class="container">
+                    <div class="block-heading">
+                        <h4 class="mt-4 mb-5 text-primary text-center"><strong>Buy Which Is Best Fits For You</strong></h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">  
+                            <div class="col-md-9">
+                                <div class="text-center container py-5">   
+                                    <div class="row">
+                                      {% for cloth in clothes %} 
+                                      <div class="col-lg-4 col-md-12 mb-4">
+                                        <div class="card">
+                                          <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+                                            data-mdb-ripple-color="light">
+                                            <img class="w-100" src={{cloth.product.image.url}} />
+                                            <a href="#!">
+                                              <div class="mask">
+                                              </div>
+                                              <div class="hover-overlay">
+                                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                              </div>
+                                            </a>
+                                          </div>
+                                          <div class="card-body">
+                                            <p href="" class="text-left">
+                                              <h5 class="mb-3 text-info">{{cloth.product.title}}</h5>
+                                            </p>
+                                            <p href="" class="" style="text-decoration:none;">
+                                              <p class="text-bold">Category:  {{cloth.product.category}}</p>
+                                            </p>
+                                            <h6 class="mb-3">{{cloth.product.price}}</h6>
+                                            <div>
+                                                <a class='w-100' href={% url 'purchase' id=cloth.id %}>
+                                                    <button type="button" class="btn btn-primary">Buy</button>
+                                                </a>
+                                             
+                                           
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      {% endfor %}
+                                     
+                                    </div>
+                                
+                                   
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- product -->
+    <section >
+      
+    </section>
+</div>
+
+
+{% endblock %}
