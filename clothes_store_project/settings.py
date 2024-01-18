@@ -29,7 +29,7 @@ SECRET_KEY =
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ['https://clothes-store-django.onrender.com/']
+CSRF_TRUSTED_ORIGINS = ['https://clothes-store-django.onrender.com']
 
 # Application definition
 
