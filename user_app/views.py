@@ -24,7 +24,7 @@ def send_verify_mail_to_user(confirm_link, user):
     email.send()
 
 
-base_link = 'http://127.0.0.1:8000'
+base_link = 'https://clothes-store-django.onrender.com'
 
 
 # class BookCreateView(CreateView):
