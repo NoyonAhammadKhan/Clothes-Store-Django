@@ -7,7 +7,7 @@
             <section class="clean-block clean-catalog dark">
                 <div class="container">
                     <div class="block-heading">
-                        <h4 class="mt-4 mb-5 text-info text-center"><strong>Find The Best Fits For You</strong></h4>
+                        <h4 class="mt-4 mb-5 text-success text-center"><strong>Find The Best Fits For You</strong></h4>
                     </div>
                     <div class="content">
                         <div class="row">
@@ -67,16 +67,14 @@
                                           </label>
                                         </div>
                                         <div class='mt-5'>
-                                          <button type="button" id="btn" class="btn btn-primary">Apply Filter</button>
+                                          <button type="button" id="btn" class="btn btn-success">Apply Filter</button>
                                         </div>
                                     </div>
                                 </div>
                         
                             </div>
                             <div class="col-md-9">
-                                <div class="text-center container py-5">
-                                 
-                                
+                                <div class="text-center container py-5">     
                                     <div class="row">
                                       {% for cloth in clothes %} 
                                       <div class="col-lg-4 col-md-12 mb-4">
@@ -94,7 +92,7 @@
                                           </div>
                                           <div class="card-body">
                                             <p href="" class="text-left">
-                                              <h5 class="mb-3 text-info">{{cloth.title}}</h5>
+                                              <h5 class="mb-3 text-success">{{cloth.title}}</h5>
                                             </p>
                                             <p href="" class="" style="text-decoration:none;">
                                               <p class="text-bold">Category:  {{cloth.category}}</p>
@@ -110,7 +108,7 @@
                                             <h6 class="mb-3">{{cloth.price | floatformat:2}}</h6>
                                             <div>
                                               <a class='w-100' href={% url 'details' id=cloth.id %}>
-                                                <button type="button" class="btn btn-primary">Details</button>
+                                                <button type="button" class="btn btn-success">Details</button>
                                               </a>
                                              
                                            

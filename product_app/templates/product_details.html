@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% block body_block %} 
 
 <div>
-  <div class="w-75 mx-auto">
+  <div class="w-75 mx-auto mt-5">
     <div class="card">
-      <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+      {% comment %} <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
         data-mdb-ripple-color="light">
         <img style="height:700px;" class="w-100" src={{cloth.image.url}} />
         <a href="#!">
@@ -13,8 +13,8 @@
             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
           </div>
         </a>
-      </div>
-      <div class="card-body">
+      </div> {% endcomment %}
+      {% comment %} <div class="card-body">
         <p href="" class="text-left">
           <h5 class="mb-3 text-info">{{cloth.title}}</h5>
         </p>
@@ -48,6 +48,59 @@
                 <button type="button" class="btn btn-warning">Add To Wishlist</button>
             </a>
         </div>
+      </div> {% endcomment %}
+      <div>
+        <div class="d-flex align-items-center gap-5">
+          <div>
+              <img style="width: 800px;height:800px;" src={{cloth.image.url}} alt="">
+          </div>
+          <div>
+              <h1>{{cloth.title}}</h1>
+              <h3 class="text-uppercase">Category:&nbsp;{{cloth.category}}</h3>
+              <div class="color d-flex align-items-center">
+                  <div>
+                      <p class="text-center mt-3">COLOR: &nbsp;</p>
+                  </div>
+                  <div class="color-div" style="background-color: red;width:30px;height:30px;"></div>
+              </div>
+              <div class="size d-flex align-items-center">
+                  <div>
+                      <p class="text-center mt-3">SIZE: &nbsp;</p>
+                  </div>
+                  <div class="color-div border border-2 border-success" style="width:auto;height:30px;">
+                      <p class="ms-1 mt-1 text-uppercase pe-2 ps-2">{{cloth.size}}</p>
+                  </div>
+              </div>
+              <div class="size d-flex align-items-center">
+                  <div>
+                      <p class="text-center mt-3">PRICE: &nbsp;</p>
+                  </div>
+                  <div class="color-div border border-2 border-success me-2 pe-2 ps-2" style="width:auto;height:30px;">
+                      <p class="ms-1 mt-1 text-uppercase">{{cloth.price}}</p>
+                  </div>$
+              </div>
+              <div class="size d-flex align-items-center">
+                  <div>
+                      <p class="text-center mt-3">RATING: &nbsp;</p>
+                  </div>
+                  <div class="color-div border border-2 border-success me-2" style="width:30px;height:30px;">
+                      <p class="ms-1 mt-1 text-uppercase">{{cloth.pro_rating | floatformat:1}}</p>
+                  </div><i style="color: #3DA4D5"; class="bi bi-star-fill"></i>
+              </div>
+              <div>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi expedita, nisi laboriosam quae cupiditate sint veritatis sunt unde doloribus vero!</p>
+              </div>
+              <div>
+                <a class='w-100' href={% url 'purchase' id=cloth.id %}>
+                  <button class="btn btn-success">BUY NOW</button>
+                </a>
+                <a class='w-100' href={% url 'add_wishlist' id=cloth.id %}>
+                  <button class="btn btn-info">ADD TO WISHLIST</button>
+                </a>
+                 </div>
+          </div>
+      </div>
+
       </div>
     </div>
   </div>

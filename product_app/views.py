@@ -3,6 +3,10 @@ from .models import Clothes, Category, WishList, Order, Review, Rating, SIZE_CHO
 from . import forms
 
 
+def landing(request):
+    return render(request, 'landing.html', {})
+
+
 def home(request):
     size = request.GET.get('size')
     color = request.GET.get('color')
