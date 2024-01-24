@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Clothes, Category, WishList, Order, Review, Rating, SIZE_CHOICES, COLOR_CHOICES
 from . import forms
+from django.contrib.auth.decorators import login_required
 
 
 def landing(request):
@@ -46,6 +47,7 @@ def product_details(request, id):
     return render(request, 'product_details.html', {'cloth': cloth, 'reviews': reviews, 'ratings': ratings, })
 
 
+@login_required
 def buy_product(request, id):
     cloth = Clothes.objects.get(pk=id)
     user = request.user
@@ -54,6 +56,7 @@ def buy_product(request, id):
     return redirect('add_review', id=purchase.id)
 
 
+@login_required
 def add_review(request, id):
     order = Order.objects.get(pk=id)
     product = order.product
@@ -78,6 +81,7 @@ def add_review(request, id):
     return render(request, 'review_form.html', {'form': form, 'order': order, 'reviewed': reviewed})
 
 
+@login_required
 def add_rating(request, id):
     order = Order.objects.get(pk=id)
     product = order.product
@@ -112,6 +116,7 @@ def add_rating(request, id):
     return render(request, 'rating_form.html', {'form': form, 'rated': rated, 'order': order})
 
 
+@login_required
 def add_wishlist(request, id):
     cloth = Clothes.objects.get(pk=id)
     user = request.user
