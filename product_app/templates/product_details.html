@@ -104,24 +104,26 @@
       </div>
     </div>
   </div>
-  <div class="d-flex gap-5 mx-auto w-75">
+  <div class="d-flex gap-5 mx-auto w-75 mt-5">
     <div>
-     <h1 class="text-primary">All Reviews For This Product</h1>
+     <h2 class="text-success mb-5">All Reviews For This Product</h2>
      {% for review in reviews %}
-       <div class="single-review border border-2 border-primary">
-          <h4>Review:{{review.review}} </h4>
-          <h6>User:{{review.user.username}} </h6>
+       <div style="border-radius:5px;" class="mb-2 d-block btn btn-outline-info single-review border border-1">
+          <h6 class="text-success">REVIEW: <br/>{{review.review}} </h6>
+          <hr>
+          <p class="text-black">USER_NAME:{{review.user.username}} </p>
       </div>
      {% endfor %}
       
     </div>
     <div>
-     <h1 class="text-primary">All Ratings For This Product</h1>
+     <h2 class="text-success mb-5">All Ratings For This Product</h2>
 
      {% for rating in ratings %}
-     <div class="single-rating border border-2 border-primary">
-        <h4>Rating: {{rating.rating}} </h4>
-        <h6>User: {{rating.user.username}}</h6>
+     <div style="border-radius:5px;" class="mb-2 d-block btn btn-outline-info single-review border border-1">
+        <h6 class="text-black">Rating: <br/> {{rating.rating}} </h6>
+        <hr>
+        <p class="text-black">User: {{rating.user.username}}</p>
       </div>
      {% endfor %}
     
