@@ -1,157 +1,262 @@
 .slider {
-    background-color: #c2efd4;
-  }
+  background-color: #c2efd4;
+}
 .banner-img {
-    height: 617px;
-    width: 570px;
-  }
+  height: 617px;
+  width: 570px;
+}
 .banner-heading {
+  color: #224f34;
+  font-family: Rufina;
+  font-size: 86px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.banner-para {
+  color: #267d49;
+  font-family: Poppins;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 220%; /* 52.8px */
+}
+.banner-btn {
+  border-radius: 3px;
+  background: #224f34;
+  box-shadow: 6px 33px 59px 0px rgba(0, 0, 0, 0.3);
+  width: 258px;
+  height: 74px;
+  flex-shrink: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.banner-img-bg {
+  border-radius: 141px 45px 150px 82px;
+  background: #6bc785;
+  width: 570px;
+  height: 617px;
+  flex-shrink: 0;
+}
+
+.banner-slide{
+  padding-left:200px;
+  padding-right:200px;
+}
+
+/*=============================================
+=            exclusive-section            =
+=============================================*/
+
+.exclusive-section {
+  background-color: #c2efd4;
+  margin-top: 10px;
+}
+.exc-para {
+  color: #224f34;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 167%; /* 36.74px */
+}
+
+.exclu-time {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.05);
+}
+.exclusive-section-img{
+  margin-left: 400px;
+}
+.exc-header{
+  color: #224F34;
+  font-family:'Roboto Slab';
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+/*=====  End of exclusive-section  ======*/
+
+/*=============================================
+=            Comment            =
+=============================================*/
+/* .review-card {
+  width: auto;
+  height: 253px;
+ 
+} */
+
+/*=====  End of Comment  ======*/
+
+/*=============================================
+=            Footer            =
+=============================================*/
+
+
+footer {
+    color: #ffffff;
+   
+  }
+  .social-icons ul{
+      display:flex:
+      gap:10px;
+  }
+  .social-icon{
+      font-size:30px;
+  }
+  .footer-divs {
+    width:100%;
+    margin:auto;
+  }
+  ul li {
+    list-style-type: none;
+  }
+  .services{
+      text-align:left;
+  }
+  
+
+/*=====  End of Footer  ======*/
+
+
+/*=============================================
+=            Accessories            =
+=============================================*/
+.accessories-card{
+  width: 380px;
+  height: 566px;
+ 
+}
+
+.accessories-img{
+  width: 380px;
+  height: 500px;
+  border-radius: 3px;
+  background: #D3E2D7;
+}
+
+.accessories-para{
+  color: #373737;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 143%; /* 31.46px */
+}
+.accessories-heading{
+  color: #373737;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*=====  End of Accessories  ======*/
+
+
+/*=============================================
+=            Responsive            =
+=============================================*/
+@media  screen and (max-width: 600px) {
+  /* body{
+    max-width:580px;
+  } */
+  .banner-img {
+    height: 300px;
+    width: 270px;
+  }
+  .banner-heading {
     color: #224f34;
     font-family: Rufina;
-    font-size: 86px;
+    font-size: 22px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
   }
-.banner-para {
+  .banner-para {
     color: #267d49;
     font-family: Poppins;
-    font-size: 24px;
+    font-size: 12px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 220%; /* 52.8px */
+    font-weight: 300;
+    line-height: 120%; /* 52.8px */
+    display:none;
   }
-.banner-btn {
+  .banner-btn {
     border-radius: 3px;
     background: #224f34;
-    box-shadow: 6px 33px 59px 0px rgba(0, 0, 0, 0.3);
-    width: 258px;
-    height: 74px;
+    box-shadow: 2px 16px 39px 0px rgba(0, 0, 0, 0.3);
+    width: 110px;
+    height: 44px;
     flex-shrink: 0;
     background-color: #000;
     color: #fff;
     font-family: Poppins;
-    font-size: 20px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     text-transform: uppercase;
   }
   
-.banner-img-bg {
-    border-radius: 141px 45px 150px 82px;
+  .banner-img-bg {
+    border-radius: 81px 25px 90px 42px;
     background: #6bc785;
-    width: 570px;
-    height: 617px;
+    width: 270px;
+    height: 300px;
     flex-shrink: 0;
+    margin-top:20px;
+    margin-right:50px;
   }
-  
-  /*=============================================
-  =            exclusive-section            =
-  =============================================*/
-  
-.exclusive-section {
-    background-color: #c2efd4;
-    margin-top: 10px;
+  .exclusive-section-img{
+    display:none;
   }
-.exc-para {
+  .exc-para {
     color: #224f34;
     font-family: Poppins;
-    font-size: 22px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 500;
     line-height: 167%; /* 36.74px */
   }
   
-.exclu-time {
-    width: 100px;
-    height: 100px;
+  .exclu-time {
+    width: 50px;
+    height: 50px;
     flex-shrink: 0;
     border-radius: 3px;
     background: #fff;
     box-shadow: 0px 7px 30px 0px rgba(0, 0, 0, 0.05);
   }
-  /*=====  End of exclusive-section  ======*/
-  
-  /*=============================================
-  =            Comment            =
-  =============================================*/
-.review-card {
-    width: 434px;
-    height: 253px;
-    flex-shrink: 0;
+  .exclusive-section-img{
+    margin-left: 400px;
   }
-  
-  /*=====  End of Comment  ======*/
-  
-  /*=============================================
-  =            Footer            =
-  =============================================*/
-  
-  
-footer {
-      color: #ffffff;
-     
-    }
-    .social-icons ul{
-        display:flex:
-        gap:10px;
-    }
-    .social-icon{
-        font-size:30px;
-    }
-    .footer-divs {
-      display: flex;
-      gap: 25px;
-      width:75%;
-      margin:auto;
-    }
-    ul li {
-      list-style-type: none;
-    }
-    .services{
-        text-align:left;
-    }
-    
-  
-  /*=====  End of Footer  ======*/
-  
-  
-  /*=============================================
-  =            Accessories            =
-  =============================================*/
-.accessories-card{
-    width: 380px;
-    height: 566px;
-   
-}
-  
-.accessories-img{
-    width: 380px;
-    height: 500px;
-    border-radius: 3px;
-    background: #D3E2D7;
-}
-  
-.accessories-para{
-    color: #373737;
-    text-align: center;
-    font-family: Poppins;
+  .exc-header{
+    color: #224F34;
+    font-family:'Roboto Slab';
     font-size: 22px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 143%; /* 31.46px */
-}
-.accessories-heading{
-    color: #373737;
-    text-align: center;
-    font-family: Poppins;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 600;
+    font-weight: 700;
     line-height: normal;
+  }
+
 }
-  
-  /*=====  End of Accessories  ======*/
-  
-  
+
+
+/*=====  End of Responsive  ======*/
+

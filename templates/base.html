@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Willow & Stone</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -18,105 +19,63 @@
     <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
   </head>
   <body>
-    <nav
-      style="background-color: #c2efd4"
-      class="mt-2 navbar navbar-expand-lg text-warning navbar-dark"
-    >
-      <!-- Container wrapper -->
-      <div class="container">
-        <!-- Navbar brand -->
-        <a class="navbar-brand fw-bolder fs-3 text-black" href="#"
-          >Willow & Stone</a
-        >
-
-        <!-- Toggle button -->
+    <header style="background-color: #c2efd4">
+      <nav class="navbar navbar-expand-lg navbar-light container">
+        <a class="navbar-brand fw-bold fs-2" href="#">Willow & Stone</a>
         <button
           class="navbar-toggler"
           type="button"
-          data-mdb-toggle="collapse"
-          data-mdb-target="#navbarSupportedContent"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <i class="fas fa-bars"></i>
+          <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <!-- Link -->
-
-            <!-- Dropdown -->
-            <li class="nav-item dropdown">
-              <!-- Dropdown menu -->
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+          <ul class="navbar-nav me-0 ms-auto fs-5">
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'home' %}">Home </a>
             </li>
-          </ul>
-
-          <!-- Icons -->
-          <!--        home, profile, logout menu  -->
-          <ul class="text-black fw-bold navbar-nav d-flex flex-row me-1">
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'home' %}"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'store' %}"
-                >Store</a
-              >
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'store' %}">Store</a>
             </li>
             {% if request.user.is_authenticated %}
-
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'wishlist' %}"
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'wishlist' %}"
                 >Wishlist</a
               >
             </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'orders' %}"
+            <li class="nav-item">
+              <a class="nav-link text-success" href="#">Cart</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'orders' %}"
                 >Orders</a
               >
             </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'logout' %}"
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'logout' %}"
                 >Logout</a
               >
             </li>
-            {%else%}
+            {% else %}
 
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'signup'  %}"
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'signup' %}"
                 >Signup</a
               >
             </li>
-            <li class="nav-item me-3 me-lg-0">
-              <a class="nav-link fs-5 text-black" href="{%url 'login'  %}"
-                >Login</a
-              >
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{%url 'login' %}">Login</a>
             </li>
-            {% endif %}
+            --> {% endif %}
           </ul>
-
-          <!-- Search -->
         </div>
-      </div>
-      <!-- Container wrapper -->
-    </nav>
+      </nav>
+    </header>
 
     {% block body_block %} {% endblock %}
     <footer
@@ -127,12 +86,12 @@
       "
       class="d-flex flex-sm-row mx-auto mt-5"
     >
-      <div class="d-flex footer-divs mx-auto" style="width: 60%">
-        <div class="">
+      <div class="d-flex footer-divs mx-auto row" style="width: 60%">
+        <div class="col col-lg-3 col-sm-12">
           <img src="./assets/logo.png" alt="" />
-          <h1 class="d-inline-block">Willow & Stone</h1>
+          <h1 class="d-inline-block">Willy & Stone</h1>
         </div>
-        <div class="social-icons">
+        <div class="social-icons col col-lg-3 col-sm-12">
           <ul class="d-flex" style="gap: 18px">
             <li>
               <i class="social-icon bi bi-twitter"></i>
@@ -148,7 +107,7 @@
             </li>
           </ul>
         </div>
-        <div class="services">
+        <div class="services col col-lg-3 col-sm-12">
           <h4 class="" style="margin-left: 28px">Services</h4>
           <ul class="ms-0">
             <li>Bonus program</li>
@@ -159,7 +118,7 @@
             <li>Payment</li>
           </ul>
         </div>
-        <div class="assist_buyer">
+        <div class="assist_buyer col col-lg-3 col-sm-12">
           <h4 style="margin-left: 28px">Assistance to the buyer</h4>
           <ul>
             <li>Find an order</li>
@@ -172,6 +131,7 @@
         </div>
       </div>
     </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
